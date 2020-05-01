@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="Login_files/cbgapi.loaded_0" async=""></script><script src="Login_files/platform.js" async="" defer="defer" gapi_processed="true"></script>
+<meta name="google-signin-client_id" content="129204403064-vmdans8kjpqje22r2bh29nc6c500gllq.apps.googleusercontent.com">
+
+<meta charset="utf-8">
+<meta name="studLogin" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>Login</title>
+
+<link href="Login_files/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="Login_files/responsive.css" rel="stylesheet" type="text/css">
+<link href="Login_files/menuCss.css" rel="stylesheet" type="text/css">
+<link href="Login_files/main.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="Login_files/jquery-1.js"></script>
+<script type="text/javascript" src="Login_files/jquery.js"></script>
+
+<script type="text/javascript" src="Login_files/jquery-ui.js"></script>
+
+<script src="Login_files/login.js"></script>
+<script src="Login_files/script.js"></script>
+<script type="text/javascript" src="Login_files/validation.js"></script>
+
+
+<script>
+	var reloadCaptchaCount = 0;
+	$(document).ready(function() {
+	
+		$("#hallticket-btn").click(function(){
+			var fileName = $("#hall-ticket").val();
+			if(fileName != ''){
+				window.open("https://gu.mastersofterp.in/rfcampusgu/hallticket/"+fileName+".pdf", '_blank');
+				
+				
+				$("#hall-ticket").val('');
+			}
+		})
+		
+		$("#login_form").validate({
+			rules : {
+				loginusername : {
+					required : true
+				},
+				password : {
+					required : true
+				}
+			},
+	
+			// Specify the validation error messages
+			messages : {
+				loginusername : {
+					required : ""
+				},
+				password : {
+					required : ""
+				}
+			},
+			highlight : function(element) {
+				$(element).closest('.form-group').addClass('has-error');
+			},
+			unhighlight : function(element) {
+				$(element).closest('.form-group').removeClass('has-error');
+			},
+	
+			submitHandler : function(form) {
+				$("#username").val($("#login-username").val() + "-adminlogin");
+				form.submit();
+			}
+		});
+	
+		"use strict";
+	
+		$("#reloadCapBtn").click(function(){
+			reloadCaptcha();
+		});
+		
+		//	App.init(); // Init layout and core plugins
+		Plugins.init(); // Init all plugins
+		FormComponents.init(); // Init all form-specific plugins
+	});
+
+	function reloadCaptcha(){
+		$("#captcha").attr('src', '/rfcampusgu'+'/simpleCaptcha.jpg?reloadCaptchaCount='+reloadCaptchaCount);
+		reloadCaptchaCount++;
+	}
+</script>
+
+<style type="text/css">
+.img {
+	width: auto\9;
+	height: 55px;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	border-radius: 4px;
+	opacity: 1.15;
+	background: #ffffff;
+	margin-left: -16px;
+}
+
+.footer-right {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+.footer-right .img {
+	margin-left: 0;
+}
+
+/* Shubham S : 2020-04-11
+Change Log: for blinking added this 
+start*/
+mark { 
+  background-color: rgb(16, 254, 254);
+  color: rgb(254, 14, 14);
+}
+.blink {
+  animation: blinker 7s linear infinite;
+  
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+/* end */
+
+</style>
+
+<style> .abcRioButton{-webkit-border-radius:1px;border-radius:1px;-webkit-box-shadow 0 2px 4px 0px rgba(0,0,0,.25);box-shadow:0 2px 4px 0 rgba(0,0,0,.25);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .218s,border-color .218s,box-shadow .218s;transition:background-color .218s,border-color .218s,box-shadow .218s;-webkit-user-select:none;-webkit-appearance:none;background-color:#fff;background-image:none;color:#262626;cursor:pointer;outline:none;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:auto}.abcRioButton:hover{-webkit-box-shadow:0 0 3px 3px rgba(66,133,244,.3);box-shadow:0 0 3px 3px rgba(66,133,244,.3)}.abcRioButtonBlue{background-color:#4285f4;border:none;color:#fff}.abcRioButtonBlue:hover{background-color:#4285f4}.abcRioButtonBlue:active{background-color:#3367d6}.abcRioButtonLightBlue{background-color:#fff;color:#757575}.abcRioButtonLightBlue:active{background-color:#eee;color:#6d6d6d}.abcRioButtonIcon{float:left}.abcRioButtonBlue .abcRioButtonIcon{background-color:#fff;-webkit-border-radius:1px;border-radius:1px}.abcRioButtonSvg{display:block}.abcRioButtonContents{font-family:Roboto,arial,sans-serif;font-size:14px;font-weight:500;letter-spacing:.21px;margin-left:6px;margin-right:6px;vertical-align:top}.abcRioButtonContentWrapper{height:100%;width:100%}.abcRioButtonBlue .abcRioButtonContentWrapper{border:1px solid transparent}.abcRioButtonErrorWrapper,.abcRioButtonWorkingWrapper{display:none;height:100%;width:100%}.abcRioButtonErrorIcon,.abcRioButtonWorkingIcon{margin-left:auto;margin-right:auto}.abcRioButtonErrorState,.abcRioButtonWorkingState{border:1px solid #d5d5d5;border:1px solid rgba(0,0,0,.17);-webkit-box-shadow:0 1px 0 rgba(0,0,0,.05);box-shadow:0 1px 0 rgba(0,0,0,.05);color:#262626}.abcRioButtonErrorState:hover,.abcRioButtonWorkingState:hover{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);-webkit-box-shadow:0 1px 0 rgba(0,0,0,.1);box-shadow:0 1px 0 rgba(0,0,0,.1)}.abcRioButtonErrorState:active,.abcRioButtonWorkingState:active{border:1px solid #aaa;border:1px solid rgba(0,0,0,.25);-webkit-box-shadow:inset 0 1px 0 #ddd;box-shadow:inset 0 1px 0 #ddd;color:#262626}.abcRioButtonWorkingState,.abcRioButtonWorkingState:hover{background-color:#f5f5f5}.abcRioButtonWorkingState:active{background-color:#e5e5e5}.abcRioButtonErrorState,.abcRioButtonErrorState:hover{background-color:#fff}.abcRioButtonErrorState:active{background-color:#e5e5e5}.abcRioButtonWorkingState .abcRioButtonWorkingWrapper,.abcRioButtonErrorState .abcRioButtonErrorWrapper{display:block}.abcRioButtonErrorState .abcRioButtonContentWrapper,.abcRioButtonWorkingState .abcRioButtonContentWrapper,.abcRioButtonErrorState .abcRioButtonWorkingWrapper{display:none}.-webkit-keyframes abcRioButtonWorkingIconPathSpinKeyframes{0%{-webkit-transform:rotate(0)}}</style></head>
+
+<body class="breakpoint-1200">
+	<img id="test" src="Login_files/login_page_bg.jpg" class="studformStyle" alt="logIn">
+
+	<div class="header navbar navbar-fixed-top" role="banner">
+		<!-- Top Navigation Bar -->
+		<div class="container">
+			<!-- Logo -->
+			<a class="navbar-brand" href="https://gu.mastersofterp.in/rfcampusgu/index.html"> <img class="img" src="Login_files/master_logo.png" alt="logo">
+			</a>
+		</div>
+	</div>
+ ph
+	<!-- Header -->
+
+	<form id="login_form" class="form-vertical login-form studformStyle" action="fetch.php" method="get" onSubmit="return validate(); novalidate="novalidate">
+
+		<input type="hidden" name="username" id="username">
+		<!-- Left Spacing -->
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0"></div>
+		<!-- Login div -->
+		<div class="col-sm-12" style="margin-left: 60px;">
+			<div>
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 my-login-div" style="margin-top: 2%; height: 423px;">
+					<h4 class="rfcampus_title" style="font-size: 20px;">
+						<span id=""><small>GU RF-Campus</small></span>
+					</h4>
+
+					<h3 class="grid-header text text-left">Login</h3>
+					<h4 class="login_title logInPanalErrorDiv">
+						<span id="MESSAGE"></span>
+					</h4>
+
+					<div class="col-xs-12 col-sm-8 col-lg-8">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i>
+								</span> <input id="login-username" tabindex="1" type="text" class="form-control" name="loginusername" placeholder="Admission No / Employee Id">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon"> <i class="glyphicon glyphicon-lock"></i>
+								</span> <input id="login-password" tabindex="2" type="password" class="form-control" name="password" placeholder="Password">
+							</div>
+						</div>
+
+						<img id="captcha" src="Login_files/simpleCaptcha.png" width="150">
+						<button type="button" id="reloadCapBtn" title="Reload Captcha" class="btn btn-default" tabindex="6">
+							<span class="glyphicon glyphicon-refresh"></span>
+						</button>
+
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-eye-open"></i> </span> <input id="login-captcha" type="text" class="form-control col-sm-4" name="captcha" placeholder="Enter Captcha" tabindex="3" required="true">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group ">
+								<!-- 						<div class="pull-left">
+								<input id="remember_me" type="checkbox" name="remember_me"
+									value="1"> <label> Remember me </label>
+							</div> 
+ -->
+								<div class="pull-left">
+									<a href="https://gu.mastersofterp.in/rfcampusgu/forgetPassword?userType=STAFF" class="lightBlue_link fgt_pwd pull-right" tabindex="5">Forgot
+										Password?</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-12">
+								
+									<div class="col-sm-6">
+										<span class="g-signin2 " data-onsuccess="onSignIn" data-theme="dark" data-gapiscan="true" data-onload="true"><div style="height:36px;width:120px;" class="abcRioButton abcRioButtonBlue"><div class="abcRioButtonContentWrapper"><div class="abcRioButtonIcon" style="padding:8px"><div style="width:18px;height:18px;" class="abcRioButtonSvgImageWithFallback abcRioButtonIconImage abcRioButtonIconImage18"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg></div></div><span style="font-size:13px;line-height:34px;" class="abcRioButtonContents"><span id="not_signed_int5tr1xi1wd2v">Sign in</span><span id="connectedt5tr1xi1wd2v" style="display:none">Signed in</span></span></div></div></span>
+									</div>
+								
+								<div class="col-sm-6">
+									<input class="loginButtonDiv btn btn-md btn-primary" tabindex="4" value="Login" style="padding: 8px 28px 9px 24px;" type="submit" id="btnsubmit">
+								</div>
+							</div>
+						</div>
+
+
+
+						<br>
+
+						<div class="col-xs-12">
+							<a href="https://gu.mastersofterp.in/rfcampusgu/student-login">Apply for Online Admission </a>
+						</div>
+						<br> <br>
+						<div class="col-xs-12">
+							<a href="https://gu.mastersofterp.in/rfcampusgu/tandp/companyreg">Company Registration</a>
+						</div>
+						<div class="col-sm-12" style="color: rgb(9, 9, 9); font-size: 16px; margin-top: 0%; margin-left: 0%;">
+							
+								
+							
+							
+								
+							
+							
+								
+							
+							
+								
+							
+
+						</div>
+					</div>
+					<div class="hidden-xs col-sm-4 col-lg-4 mylockbg">
+						<img src="Login_files/login-lock.png" style="height: 165px; width: 150px; background: none" alt="lock">
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-0 my-login-div" style="margin-top: 2%; height: 423px;">
+					<br>
+					<div class="col-sm-12">
+						<div class="col-sm-12" style="margin-top: 30%;">
+							
+								
+									<div class="col-xs-12" style="font-size: 20px; width: 100%; margin-top: -22%;">
+										<a href="https://docs.google.com/forms/d/e/1FAIpQLScdWccDGNIGQVfd8x8lCIgN5NLtI7qLx0R_TJzxtRoFu21Rlg/viewform">Students Grievances<img src="Login_files/newNotification.gif" style="height: 12px !important;margin-bottom: 3%;"></a></div>
+								
+							
+							<br> <br>
+							 <div class="col-sm-6 col-sm-offset-3">
+				 	<!-- <div class="form-group">				 	
+					 	<input id="hall-ticket" type="text" class="form-control col-sm-4   text-center"
+								name="" placeholder="Adminssion No/UserName">
+						<button type="button" style="margin-top: 6px;"
+						class="btn btn-xl btn-danger font13"
+						id="hallticket-btn">Download Hall ticket</button>
+						</div> -->
+					</div> 
+						</div>
+						
+						<div class="col-sm-12" style="margin-top: 10%;">
+							
+								
+									<div class="col-xs-12 blink" style="color: rgb(16, 194, 254); font-size: 20px; width: 100%; margin-top: -22%;">
+										<p style="font-size: 13px;"><strong>Sub:</strong> <span style="color: #ff0000;">Suspension of Online Classes due to Online Unifest</span></p> <p style="font-size: 13px;">All the students are hereby informed that the university is organizing an Online Unifest on 24th &amp; 25th April 2020.<span style="background-color: #ffff00;"> Online Classes will be suspended on 24 &amp; 25 April 2020.</span> All students are required to participate in at least two activities. The schedule of fest is attached herewith.</p> <p style="font-size: 13px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dear Students<br><strong>Sub:</strong> Fees paid through Neft<br>If <mark>fees transferred through NEFT/RTGS</mark>,
+ please visit your RFCampus login and fill in details under the head 
+NEFT Details. It is mandatory to fill in the details online failing 
+which fees paid shall not be taken into account and shall remain 
+outstanding. Manual forms in this regard shall not be entertained.<br><br> If transaction already reconciled please ignore this communication.</p></div>
+								
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-right">
+			<a href="https://www.iitms.co.in/" target="_blank" class="pull-right">
+				<img class="img" src="Login_files/mastersoft_logo.png" alt="Mastersoft">
+			</a>
+		</div>
+	</form>
+
+
+	<div>
+		<!-- j_spring_openid_security_check -->
+		<form id="gform" method="post" name="gform" action="tandp/companyreg/authenticate-social-user">
+	</form></div>
+	<!--  <input name="openid_identifier" type="hidden"
+					value="https://www.google.com/accounts/o8/id"/> -->
+	<input name="id" type="text" hidden="">
+	<input name="idToken" type="text" hidden="">
+
+	
+
+	
+
+
+<iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin allow-storage-access-by-user-activation" style="position: absolute; width: 1px; height: 1px; inset: -9999px; display: none;" aria-hidden="true" frame-border="0" src="Login_files/iframe.html"></iframe></body></html>
